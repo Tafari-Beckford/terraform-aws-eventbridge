@@ -110,8 +110,8 @@ variable "connections" {
 
 variable "api_destinations" {
   description = "A map of objects with EventBridge Destination definitions."
-  type        = string
-  default     = "default"
+  type        = map(any)
+  default     = {}
 }
 
 variable "tags" {
