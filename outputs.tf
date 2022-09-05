@@ -35,7 +35,7 @@ output "eventbridge_connection_arns" {
 # EventBridge Destination
 output "eventbridge_api_destination_arns" {
   description = "The EventBridge API Destination ARNs created"
-  value       = var.api_destinations
+  value       = { for k, v in aws_cloudwatch_event_destination_api.this : k => v.arn }
 }
 
 # EventBridge Rule
