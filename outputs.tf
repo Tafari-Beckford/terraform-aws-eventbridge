@@ -60,7 +60,5 @@ output "eventbridge_role_name" {
   value       = try(aws_iam_role.eventbridge[0].name, "")
 }
   
-output "eventbridge_destination_arn" {
-  value = module.aws_cloudwatch_event_api_destination.arn
-}
+
 
