@@ -61,8 +61,12 @@ output "eventbridge_role_name" {
 }
 
 output "eventbridge_api" {
-value = aws_cloudwatch_event_api_destination.this[each.value.name].arn
-}
 
+ value = flatten([for m in var.api_destinations :
+    [for k, v in m : v]
+  ])
+
+  
+}
 
 
