@@ -61,7 +61,7 @@ output "eventbridge_role_name" {
 }
 
 output "eventbridge_api" {
-value = aws_cloudwatch_event_api_destination.this.arn
+value = aws_cloudwatch_event_api_destination.this[0].arn
   
 }
 
